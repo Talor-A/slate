@@ -1,0 +1,57 @@
+{
+  "version": "0.2.0",
+  "compounds": [
+    {
+      "name": "Launch Web App (All Services)",
+      "configurations": ["Launch Docker", "Launch Zero", "Launch Web Dev"],
+      "stopAll": true
+    },
+    {
+      "name": "Launch Tauri App (All Services)",
+      "configurations": ["Launch Docker", "Launch Zero", "Launch Tauri Dev"],
+      "stopAll": true
+    }
+  ],
+  "configurations": [
+    {
+      "name": "Launch Docker",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["docker", "up"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Launch Zero",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["zero"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Launch Web Dev",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["dev"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Launch Tauri Dev",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["dev:tauri"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Clean Docker",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["docker:start:clean"],
+      "console": "integratedTerminal"
+    }
+  ]
+}
